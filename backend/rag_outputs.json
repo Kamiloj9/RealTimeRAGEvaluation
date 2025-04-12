@@ -1,0 +1,44 @@
+[
+    {
+        "query": "What is the MedAgent-Pro?",
+        "method": "negative_prompt",
+        "rewrite": "MedAgent-Pro is a system designed to provide accurate and understandable medical diagnoses. It combines various medical tools and guidelines to analyze patient information and generate reliable diagnostic plans. Its main purpose is to support healthcare professionals in making informed decisions based on evidence.",
+        "step_back": "Key concepts and functions of medical agents in healthcare include the use of evidence-based reasoning to formulate diagnostic plans and analyze patient data. The MedAgent-Pro framework employs various agents, such as planners and deciders, to integrate clinical criteria and generate explainable diagnoses. These agents work together to ensure comprehensive and reliable medical decision-making by analyzing diverse indicators and biomarkers.",
+        "sub_queries": "MedAgent-Pro is a system designed to provide accurate and understandable medical diagnoses by combining clinical guidelines with visual evidence. It supports healthcare professionals in making informed decisions by analyzing patient information and generating reliable diagnostic plans. This approach enhances the reliability and clarity of the diagnostic process in clinical settings."
+    },
+    {
+        "query": "What is the MedAgent-Pro?",
+        "method": "exclusion_prompt",
+        "rewrite": "MedAgent-Pro is an evidence-based reasoning workflow designed to provide accurate and explainable medical diagnoses by integrating clinical guidelines and visual evidence. Its key features include a hierarchical structure with task-level planning by MLLMs and case-level execution by medical expert tools, enabling comprehensive analysis of multi-modal patient data. This system enhances decision-making in healthcare by ensuring reliable diagnostic plans and supporting evidence-based practices.",
+        "step_back": "MedAgent-Pro is a reasoning agentic workflow that provides accurate and explainable medical diagnoses by integrating clinical guidelines and visual evidence. It operates at two levels: the task level formulates diagnostic plans using knowledge-based reasoning, while the case level executes these plans and analyzes patient information. This system excels in multi-modal medical diagnosis, achieving state-of-the-art performance and enhancing interpretability and reliability in clinical decision-making.",
+        "sub_queries": "MedAgent-Pro is a comprehensive medical diagnosis system that integrates multi-modal patient data to provide accurate and explainable diagnoses supported by clinical guidelines and visual evidence. It operates through a hierarchical workflow, utilizing task-level agents to generate diagnostic plans and case-level agents to analyze patient information. Designed for medical professionals, it enhances evidence-based decision-making and demonstrates state-of-the-art performance in diagnostics."
+    },
+    {
+        "query": "What is the MedAgent-Pro?",
+        "method": "constraint_prompt",
+        "rewrite": "MedAgent-Pro is an evidence-based reasoning agentic system designed for comprehensive medical diagnosis, utilizing multi-modal data and clinical guidelines. It operates on a hierarchical structure, where task-level MLLMs generate diagnostic plans and case-level medical expert tools analyze patient information, ensuring reliable and explainable outcomes. The system has demonstrated state-of-the-art performance in both 2D and 3D medical diagnoses, emphasizing its interpretability and reliability in clinical applications.",
+        "step_back": "Advanced agent-based systems in healthcare, such as the MedAgent-Pro framework, feature a hierarchical structure that integrates multi-modal information for evidence-based medical diagnosis. They utilize reasoning capabilities of large language models (LLMs) to formulate diagnostic plans and execute them through medical expert models that analyze various indicators. Additionally, a decider agent ensures comprehensive and accurate diagnoses by synthesizing the information gathered from different agents.",
+        "sub_queries": "MedAgent-Pro is a reasoning agentic workflow designed for evidence-based multi-modal medical diagnosis, offering accurate and explainable diagnoses supported by clinical guidelines and visual evidence. It integrates multi-modal medical data through a hierarchical structure, utilizing machine learning language models and medical expert tools for diagnostic planning and patient information analysis. Target users include healthcare professionals and patients, aiming to enhance decision-making in medical diagnosis."
+    },
+    {
+        "query": "Explain Knowledge-based Task-level Reasoning like I am five.",
+        "method": "negative_prompt",
+        "rewrite": "Knowledge-based Task-level Reasoning is like a smart helper that figures out how to solve a problem by using information it knows. It looks at different clues and steps to decide what to do next, just like following a recipe to make a cake. In the end, it helps find the right answer or solution.",
+        "step_back": "Reasoning, in simple terms, is the process of thinking about something in a logical way to form conclusions or make decisions. It involves gathering information, evaluating it, and using it to solve problems or understand situations. In the context of medical diagnosis, reasoning helps in creating a structured plan to determine a patient's condition based on evidence and established criteria.",
+        "sub_queries": "Knowledge-based task-level reasoning is like a smart helper that uses clues to solve problems, especially in medicine. It looks at things like symptoms and test results, just like following a recipe, to decide what to do next to help someone feel better. This way, it makes sure the right choices are made to help people."
+    },
+    {
+        "query": "Explain Knowledge-based Task-level Reasoning like I am five.",
+        "method": "exclusion_prompt",
+        "rewrite": "Knowledge-based Task-level Reasoning is like following a recipe to solve a problem. For example, if you want to make a sandwich, you gather ingredients (like bread and cheese), follow steps (like putting them together), and check if it looks yummy. This way of thinking helps doctors figure out what's wrong with someone by using information and steps to make a good decision.",
+        "step_back": "Reasoning is the cognitive process of drawing conclusions or making decisions based on available information and evidence. In everyday life, people use reasoning to solve problems by evaluating options, weighing pros and cons, and applying learned knowledge to make informed choices. This process often involves both analytical thinking and practical application of past experiences.",
+        "sub_queries": "Knowledge-based task-level reasoning is like a smart helper that uses clues, similar to following a recipe, to solve problems, especially in medicine. It gathers information, like symptoms and test results, to make decisions step by step, ensuring accurate diagnoses. This method relies on established knowledge to guide actions, making it reliable and effective in helping people feel better."
+    },
+    {
+        "query": "Explain Knowledge-based Task-level Reasoning like I am five.",
+        "method": "constraint_prompt",
+        "rewrite": "Knowledge-based Task-level Reasoning is a way to solve problems by following specific steps based on gathered information and rules. For example, in a medical setting, a system might first collect data about a patient, then use that information to decide what disease they might have by checking against medical guidelines. This process helps ensure that the diagnosis is accurate and reliable by analyzing different indicators and making informed decisions.",
+        "step_back": "Knowledge-based Task-level Reasoning involves creating diagnostic processes that adhere to medical guidelines for specific diseases. It functions by gathering information and generating reliable diagnostic plans at the task level, while tool agents analyze multi-modal inputs and indicators at the case level to provide a final diagnosis. This structured approach enhances the reliability and interpretability of medical diagnoses.",
+        "sub_queries": "Knowledge-based task-level reasoning is a method used in medical diagnosis that combines established medical guidelines with patient information to create reliable diagnostic plans. It involves gathering relevant data and analyzing it through a structured approach to reach accurate conclusions. This integrated process improves the reliability and clarity of medical assessments."
+    }
+]

@@ -1,0 +1,78 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+.backend_venv/
+.frontend_venv/
+
+# Python virtualenv metadata
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Environment files
+.env
+.env.*
+
+# VS Code config
+.vscode/
+
+# macOS junk
+.DS_Store
+
+# Jupyter / IPython
+.ipynb_checkpoints
+
+# Streamlit
+frontend/.streamlit/secrets.toml
+
+# Logs and temp
+*.log
+*.tmp
+*.bak
+*.swp
+
+# PyCharm / JetBrains
+.idea/
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Flask cache
+instance/
+*.db
+*.sqlite3
+
+# Coverage / test
+coverage.xml
+.cache/
+.noseids
+htmlcov/
+.tox/
+.pytest_cache/
+.pyre/
+
+# RAG + LangChain cache (if used)
+.cache/
+ragas_cache/
+langchain.db
+
+# Data files
+*.csv
+*.tsv
+*.parquet
+*.jsonl
+
+# QA file if generated dynamically
+qa_pairs_generated.json
+
+# Build artifacts
+build/
+dist/
+*.egg-info/

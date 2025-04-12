@@ -1,0 +1,8 @@
+gradio
+pyyaml
+python-dotenv
+PyPDF2
+requests
+pandas
+langchain_openai
+langchain_core
