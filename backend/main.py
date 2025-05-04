@@ -1,4 +1,3 @@
-import logging
 from src.evaluation import evaluate_rag_response
 from src.utils import load_config
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
@@ -18,15 +17,11 @@ from datasets import Dataset
 from ragas.metrics import faithfulness, answer_relevancy, context_precision
 from ragas import evaluate
 from flask import Flask, Response, stream_with_context
+from src.logger_setup import setup_logger
 
-logging.basicConfig(
-    level=logging.DEBUG,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%Y-%m-%d %H:%M:%S',
-    filename='app.log',
-    filemode='w'
-)
+logger = setup_logger()
 
+# used for testing
 if __name__ == '__main2__':
     # Build the RAG system
     rag_system = build_complete_rag_system(rag_prompt_template_simple)
@@ -88,6 +83,7 @@ def stream_evaluations():
         for pair in qa_pairs:
             question = pair["question"]
             reference_answer = pair["answer"]
+            logger.info(f"Processing question: {question}")
 
             new_queries = {
                 "negative_prompt": negative_example_prompt.format(topic=question),
@@ -101,6 +97,7 @@ def stream_evaluations():
 
             for prompt_type, prompt in new_queries.items():
                 for method_name, method_func in query_methods.items():
+                    logger.debug(f"Method: {method_name}, Prompt: {prompt_type}")
                     result = method_func(rag_chain, prompt)
 
                     # Handle string vs dict
@@ -131,6 +128,10 @@ def stream_evaluations():
                     raise_exceptions=False)
                     ragas_scores = ragas_result.to_pandas().to_dict(orient="records")[0]
 
+                    logger.debug(f"Generated answer (truncated): {answer[:100]}...")
+                    logger.debug(f"LLM evaluation result: {llm_eval}")
+                    logger.debug(f"RAGAS scores: {ragas_scores}")
+
                     response = {
                         "question": question,
                         "reference_answer": reference_answer,
@@ -155,5 +156,7 @@ def stream_evaluations():
     }
     return Response(stream_with_context(generate()), headers=headers)
 
+# main entry
 if __name__ == "__main__":
+    logger.info("Starting Flask app")
     app.run(debug=True)

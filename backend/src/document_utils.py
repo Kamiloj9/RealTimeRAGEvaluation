@@ -7,9 +7,11 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_core.documents import Document
 from langchain_core.vectorstores import VectorStore
-import logging
 from typing import Optional, Tuple, List, Any
+from src.logger_setup import setup_logger
 from src.config import DEFAULT_CHUNK_SIZE, DEFAULT_CHUNK_OVERLAP, embeddings
+
+logger = setup_logger('RAG_eval - document_utils')
 
 def download_sample_document(url: Optional[str] = None) -> Tuple[str, str]:
     """Download a sample document from a URL or use a default document"""
@@ -22,7 +24,7 @@ def download_sample_document(url: Optional[str] = None) -> Tuple[str, str]:
     
     # Download the document
     urllib.request.urlretrieve(url, pdf_path)
-    logging.info(f"Downloaded document to: {pdf_path}")
+    logger.info(f"Downloaded document to: {pdf_path}")
     return pdf_path, temp_dir
 
 def load_and_split_document(file_path: str, 
@@ -40,7 +42,7 @@ def load_and_split_document(file_path: str,
     
     # Load the document
     documents = loader.load()
-    logging.info(f"Loaded {len(documents)} document pages/segments")
+    logger.info(f"Loaded {len(documents)} document pages/segments")
     
     # Split the document into chunks
     text_splitter = RecursiveCharacterTextSplitter(
@@ -49,7 +51,7 @@ def load_and_split_document(file_path: str,
         length_function=len
     )
     chunks = text_splitter.split_documents(documents)
-    logging.info(f"Split into {len(chunks)} chunks")
+    logger.info(f"Split into {len(chunks)} chunks")
     
     return chunks
 
@@ -58,5 +60,5 @@ def create_vectorstore(chunks: List[Document],
 ) -> VectorStore:
     """Create a vector store from document chunks"""
     vectorstore = FAISS.from_documents(chunks, embedding_model)
-    logging.info(f"Created vector store with {len(chunks)} documents")
+    logger.info(f"Created vector store with {len(chunks)} documents")
     return vectorstore
