@@ -98,12 +98,29 @@ Evaluations are streamed via SSE from the backend and visualized live in the fro
 ### 1. Install Dependencies
 
 **Backend:**
+
+There must be set OPENAI_API_KEY enviroment variable. Alternatively .env file in backend folder can be used.
+
+Seting up virtual enviroment
+```bash
+cd backend
+python -m venv venv
+.\venv\Scripts\activate # on windows
+```
+
 ```bash
 cd backend
 pip install -r requirements.txt
 ```
 
 **Frontend:**
+Seting up virtual enviroment
+```bash
+cd frontend
+python -m venv venv
+.\venv\Scripts\activate # on windows
+```
+
 ```bash
 cd frontend
 pip install -r requirements.txt
